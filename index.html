@@ -485,6 +485,41 @@
       color: #3a3a3c;
       line-height: 1.7;
     }
+    .proj-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .proj-metric {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .proj-metric-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .proj-metric-lbl {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+    .proj-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .proj-link:hover { text-decoration: underline; }
     .proj-tags {
       display: flex;
       flex-wrap: wrap;
@@ -769,6 +804,8 @@
       .skill-card:nth-last-child(2) { border-radius: 0; }
       .skill-card:last-child { border-radius: 0 0 18px 18px; }
       .hero-stat-row { gap: 24px; }
+      .proj-metrics { grid-template-columns: 1fr 1fr; }
+      .proj-metric-num { font-size: 18px; white-space: nowrap; }
       .form-row { grid-template-columns: 1fr; }
       .section-divider { margin: 0 24px; }
       footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
@@ -801,7 +838,7 @@
       Padmapriya<br>
       <span class="italic">Venkatesh</span>
     </h1>
-    <p class="hero-sub">Data scientist and ML researcher at NYU CDS, working across computer vision research at the Action Lab, agentic LLM systems, and quant modeling. I use data to solve problems and shape decisions.</p>
+    <p class="hero-sub">Data scientist and ML researcher at NYU CDS, building research data pipelines at the Action Lab, cost-sensitive ML systems, agentic LLM workflows, and quant models. I use data to solve problems and shape decisions.</p>
     <div class="hero-ctas">
       <a href="#projects" class="cta-primary">See my work</a>
       <a href="#contact" class="cta-ghost">Get in touch →</a>
@@ -813,18 +850,18 @@
       </div>
       <div class="stat-divider"></div>
       <div class="hero-stat">
+        <div class="hero-stat-num">98.7%</div>
+        <div class="hero-stat-lbl">Churners caught · cost-tuned model</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1.07M</div>
+        <div class="hero-stat-lbl">Retail transactions modeled</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
         <div class="hero-stat-num">4.43</div>
         <div class="hero-stat-lbl">Sharpe ratio achieved</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">500+</div>
-        <div class="hero-stat-lbl">Video sessions processed</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">25+</div>
-        <div class="hero-stat-lbl">ML models shipped</div>
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -841,7 +878,7 @@
       <div class="about-grid">
         <div class="about-body reveal reveal-delay-2">
           <p>I'm an MS Data Science student at <strong>NYU Center for Data Science</strong>, with four years of applied work across research labs, industry, and personal projects. My focus is the intersection of <strong>quantitative modeling, NLP, and LLM-driven workflows</strong>. I like making AI systems that researchers and business teams can actually use.</p>
-          <p>At NYU's Infant Action Lab I build computer vision pipelines on 500+ video sessions, extracting structured behavioral data from raw footage. Before NYU I worked as a Data Analyst building predictive financial models and Tableau dashboards for executive decision-making. My work spans <strong>causal inference, RAG pipelines, agentic workflows, and MLOps</strong>.</p>
+          <p>At NYU's Infant Action Lab I build a config-driven data pipeline that merges 40+ years of infant body-measurement studies into one ML-ready dataset. Before NYU I worked as a Data Analyst building predictive financial models and Tableau dashboards for executive decision-making. My work spans <strong>causal inference, RAG pipelines, agentic workflows, and MLOps</strong>.</p>
           <p>I care a lot about <strong>rigor</strong>. Failure mode analysis, rubric-based eval, drift monitoring. And I care about translating quantitative findings into something non-technical stakeholders can actually act on.</p>
         </div>
         <div class="about-right reveal reveal-delay-3">
@@ -854,8 +891,8 @@
             <div class="about-card-lbl">Sharpe ratio · 50-stock portfolio optimization</div>
           </div>
           <div class="about-card" style="margin-top:2px;">
-            <div class="about-card-num">500+</div>
-            <div class="about-card-lbl">Infant video sessions processed at NYU Action Lab</div>
+            <div class="about-card-num">$555K</div>
+            <div class="about-card-lbl">Net value on held-out data · cost-sensitive churn model</div>
           </div>
           <div class="about-card" style="margin-top:2px;">
             <div class="about-card-num">15%</div>
@@ -909,7 +946,7 @@
           <div class="exp-role">Research Assistant, Data Scientist &amp; ML Research</div>
           <div class="exp-org">NYU Infant Action Lab</div>
           <ul class="exp-bullets">
-            <li>Built a computer vision pipeline using PyTorch, OpenCV, and CNN-based pose estimation across 500+ infant video sessions, extracting gaze direction and spatial perception data from raw, unstructured footage into queryable research datasets</li>
+            <li>Built a config-driven Python/pandas ETL pipeline that harmonizes 40+ years of infant body-measurement studies into a single ML-ready master dataset</li>
             <li>Designed LLM-assisted annotation workflows to extract structured behavioral insights from 40+ years of longitudinal data; built rubric-based eval suites, documented failure modes, translated findings into pipeline recommendations for non-technical stakeholders</li>
             <li>Applied agent-first development practices to accelerate annotation; critically validated AI-generated outputs for correctness, consistency, and research standards before production integration</li>
             <li>Partnered with non-technical research leadership to translate pipeline outputs and model findings into strategic decisions</li>
@@ -950,43 +987,57 @@
   <section class="section" id="projects">
     <p class="section-tag reveal">Projects</p>
     <h2 class="section-title reveal reveal-delay-1">Things I've <span class="italic">built.</span></h2>
-    <p class="section-lead reveal reveal-delay-2">Four projects spanning quant finance, agentic LLM workflows, customer analytics, and computer vision.</p>
+    <p class="section-lead reveal reveal-delay-2">Five projects spanning cost-sensitive ML, quant finance, customer analytics, computer vision, and LLM workflows. Numbers below come from re-running the code.</p>
     <div class="proj-list">
 
       <div class="proj-item reveal">
         <div>
           <div class="proj-num">001</div>
-          <div class="proj-title">Risk-Constrained Portfolio Optimization</div>
-          <div class="proj-highlight">↗ 4.43 Sharpe ratio · 50-stock universe</div>
+          <div class="proj-title">Churn Prediction &amp; Business Impact Dashboard</div>
+          <div class="proj-highlight">↗ 98.7% recall · $555K net value</div>
         </div>
         <div>
-          <p class="proj-desc">Built a 3-stage agentic pipeline combining ML ensemble predictions, API-driven data ingestion, and JSON-based service integration within a distributed systems framework. Applied rigorous evaluation and testing to validate model reliability across a 50-stock universe, achieving a 4.43 Sharpe ratio.</p>
-          <div class="proj-tags">
-            <span class="ptag">Python</span>
-            <span class="ptag">ML Ensembles</span>
-            <span class="ptag">Agentic Pipeline</span>
-            <span class="ptag">API Integration</span>
-            <span class="ptag">Distributed Systems</span>
-            <span class="ptag">Quant Finance</span>
+          <p class="proj-desc">Framed churn as a cost-sensitive problem: a missed churner costs $500 in lost lifetime value, a false alarm $20 in outreach. Tuned the decision threshold to that cost matrix, explained every prediction with SHAP, and served the model through a FastAPI backend and React dashboard with PSI drift monitoring and a 6-stage CI pipeline.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><div class="proj-metric-num">0.846</div><div class="proj-metric-lbl">Test ROC-AUC (5-fold CV 0.852)</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">80% → 99%</div><div class="proj-metric-lbl">Recall after cost-tuned threshold</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">369 / 374</div><div class="proj-metric-lbl">Churners caught on held-out set</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">$555K</div><div class="proj-metric-lbl">Net business value, test set</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">~2 ms</div><div class="proj-metric-lbl">Per-prediction API latency</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">58</div><div class="proj-metric-lbl">Automated tests passing</div></div>
           </div>
+          <div class="proj-tags">
+            <span class="ptag">Scikit-learn</span>
+            <span class="ptag">XGBoost</span>
+            <span class="ptag">SHAP</span>
+            <span class="ptag">FastAPI</span>
+            <span class="ptag">React</span>
+            <span class="ptag">Docker</span>
+            <span class="ptag">CI/CD</span>
+          </div>
+          <a href="https://github.com/10padmapriya/churn-prediction-Model" target="_blank" rel="noopener" class="proj-link">View code on GitHub →</a>
         </div>
       </div>
 
       <div class="proj-item reveal reveal-delay-1">
         <div>
           <div class="proj-num">002</div>
-          <div class="proj-title">LLM Self-Training from Prompts</div>
-          <div class="proj-highlight">↗ End-to-end MLOps · production-grade</div>
+          <div class="proj-title">Risk-Constrained Portfolio Optimization</div>
+          <div class="proj-highlight">↗ 4.43 Sharpe ratio · 50-stock universe</div>
         </div>
         <div>
-          <p class="proj-desc">Engineered an end-to-end agentic workflow using LangChain and Python, combining RAG pipelines, tool-calling, and API integrations for seamless model consumption. Instrumented with MLOps tooling including drift detection and model versioning for production-grade reliability.</p>
+          <p class="proj-desc">Built a 3-stage agentic pipeline combining ML ensemble predictions, API-driven data ingestion, and JSON-based service integration within a distributed systems framework. Applied rigorous evaluation and testing to validate model reliability across a 50-stock universe, achieving a 4.43 Sharpe ratio.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><div class="proj-metric-num">4.43</div><div class="proj-metric-lbl">Sharpe ratio</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">50</div><div class="proj-metric-lbl">Stocks in universe</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">3-stage</div><div class="proj-metric-lbl">Agentic pipeline</div></div>
+          </div>
           <div class="proj-tags">
-            <span class="ptag">LangChain</span>
-            <span class="ptag">RAG</span>
-            <span class="ptag">Tool Calling</span>
-            <span class="ptag">MLflow</span>
-            <span class="ptag">Drift Detection</span>
-            <span class="ptag">Model Versioning</span>
+            <span class="ptag">Python</span>
+            <span class="ptag">ML Ensembles</span>
+            <span class="ptag">Agentic Pipeline</span>
+            <span class="ptag">API Integration</span>
+            <span class="ptag">Quant Finance</span>
           </div>
         </div>
       </div>
@@ -995,36 +1046,74 @@
         <div>
           <div class="proj-num">003</div>
           <div class="proj-title">Customer Segmentation &amp; Pricing Strategy</div>
-          <div class="proj-highlight">↗ Clustering + willingness-to-pay model</div>
+          <div class="proj-highlight">↗ 1.07M transactions · 5,862 customers</div>
         </div>
         <div>
-          <p class="proj-desc">Applied KMeans, DBSCAN, and GMM clustering to identify high-value customer groups and predict churn risk. Built a willingness-to-pay model translating audience insights into concrete pricing, bundling, and revenue strategy recommendations.</p>
+          <p class="proj-desc">End-to-end pipeline on the UCI Online Retail II dataset: cleaned 1M+ real transactions, engineered RFM and behavioral features per customer, and compared KMeans, DBSCAN and GMM clustering. Scored churn risk without labels and translated segments into tiered pricing recommendations, with SHAP explaining the willingness-to-pay model.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><div class="proj-metric-num">1.07M</div><div class="proj-metric-lbl">Raw transactions processed</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">5,862</div><div class="proj-metric-lbl">Customers profiled</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">£17.1M</div><div class="proj-metric-lbl">Revenue covered</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">3</div><div class="proj-metric-lbl">Clustering models compared</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">31%</div><div class="proj-metric-lbl">Base flagged high churn risk</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">64</div><div class="proj-metric-lbl">Unit tests passing</div></div>
+          </div>
           <div class="proj-tags">
+            <span class="ptag">Pandas</span>
             <span class="ptag">KMeans</span>
             <span class="ptag">DBSCAN</span>
             <span class="ptag">GMM</span>
-            <span class="ptag">Churn Prediction</span>
-            <span class="ptag">Pricing Strategy</span>
-            <span class="ptag">Scikit-learn</span>
+            <span class="ptag">Gradient Boosting</span>
+            <span class="ptag">SHAP</span>
           </div>
+          <a href="https://github.com/10padmapriya/Customer-Segmentation-Pricing-Strategy" target="_blank" rel="noopener" class="proj-link">View code on GitHub →</a>
         </div>
       </div>
 
       <div class="proj-item reveal reveal-delay-3">
         <div>
           <div class="proj-num">004</div>
-          <div class="proj-title">Visual Search Pipeline</div>
-          <div class="proj-highlight">↗ CNN-based image retrieval</div>
+          <div class="proj-title">Diabetic Retinopathy Detection</div>
+          <div class="proj-highlight">↗ 0.904 quadratic weighted kappa</div>
         </div>
         <div>
-          <p class="proj-desc">Built a CNN-based image retrieval system using PyTorch and TensorFlow, implementing feature extraction, embedding similarity search, and ranking designed to surface visually similar results from large unstructured image datasets.</p>
+          <p class="proj-desc">Fine-tuned an ImageNet-pretrained ResNet50 to grade retinal fundus images into five severity levels on the APTOS 2019 dataset. Preprocessed images with circle cropping and Gaussian blur, trained with warmup, early stopping and learning-rate scheduling, and evaluated with quadratic weighted kappa, the clinical-grading standard.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><div class="proj-metric-num">0.904</div><div class="proj-metric-lbl">Test quadratic weighted kappa</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">83.9%</div><div class="proj-metric-lbl">Test accuracy</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">3,662</div><div class="proj-metric-lbl">Labeled fundus images</div></div>
+          </div>
           <div class="proj-tags">
-            <span class="ptag">PyTorch</span>
-            <span class="ptag">TensorFlow</span>
-            <span class="ptag">CNN</span>
-            <span class="ptag">Embedding Search</span>
+            <span class="ptag">TensorFlow / Keras</span>
+            <span class="ptag">ResNet50</span>
+            <span class="ptag">Transfer Learning</span>
+            <span class="ptag">OpenCV</span>
             <span class="ptag">Computer Vision</span>
-            <span class="ptag">Image Retrieval</span>
+          </div>
+          <a href="https://github.com/10padmapriya/Diabetic-Retinopathy-Detection-and-Classification-" target="_blank" rel="noopener" class="proj-link">View code on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-item reveal reveal-delay-4">
+        <div>
+          <div class="proj-num">005</div>
+          <div class="proj-title">LLM Self-Training from Prompts</div>
+          <div class="proj-highlight">↗ 93% judge acceptance · MLflow-tracked</div>
+        </div>
+        <div>
+          <p class="proj-desc">Built a loop where an LLM writes its own training data: RAG over a ChromaDB knowledge base, GPT-4o-mini generates prompt–response pairs, and GPT-4o judges each on accuracy, relevance, clarity and usefulness, keeping only pairs above 0.75. Every iteration is logged to MLflow, with KL-divergence drift detection on quality scores and output saved in HuggingFace fine-tuning format.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><div class="proj-metric-num">93%</div><div class="proj-metric-lbl">Generated pairs accepted by judge</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">0.89</div><div class="proj-metric-lbl">Avg. judge quality score (0–1)</div></div>
+            <div class="proj-metric"><div class="proj-metric-num">0</div><div class="proj-metric-lbl">Drift alerts across iterations</div></div>
+          </div>
+          <div class="proj-tags">
+            <span class="ptag">LangChain</span>
+            <span class="ptag">RAG</span>
+            <span class="ptag">ChromaDB</span>
+            <span class="ptag">LLM-as-Judge</span>
+            <span class="ptag">MLflow</span>
+            <span class="ptag">Drift Detection</span>
           </div>
         </div>
       </div>
@@ -1052,7 +1141,7 @@
         </div>
         <div class="skill-card">
           <div class="skill-cat">Deep Learning &amp; Computer Vision</div>
-          <div class="skill-items">PyTorch · TensorFlow<br>CNNs · Pose Estimation<br>OpenCV<br>Embedding Search<br>Image Retrieval</div>
+          <div class="skill-items">PyTorch · TensorFlow<br>CNNs · Transfer Learning<br>OpenCV<br>Embedding Search<br>Image Retrieval</div>
         </div>
         <div class="skill-card">
           <div class="skill-cat">NLP &amp; Text Analytics</div>
